@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { MyCounterButton } from '@repo/ui';
 </script>
 
 <h1>Docs</h1>

@@ -1,0 +1,21 @@
+{
+  "name": "@repo/zen",
+  "type": "module",
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc"
+  },
+  "exports": {
+    "./controller": {
+      "types": "./src/Controller.ts",
+      "default": "./dist/Controller.js"
+    }
+  },
+  "devDependencies": {
+    "@types/three": "^0.171.0",
+    "typescript": "latest"
+  },
+  "dependencies": {
+    "three": "^0.171.0"
+  }
+}
