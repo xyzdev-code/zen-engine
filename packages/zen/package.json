@@ -6,7 +6,7 @@
     "build": "tsc"
   },
   "exports": {
-    "./controller": {
+    ".": {
       "types": "./src/Controller.ts",
       "default": "./dist/Controller.js"
     }
