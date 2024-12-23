@@ -3,7 +3,7 @@
     import Hierarchy from "./Hierarchy.svelte"
     import Inspector from "./Inspector.svelte";
     import Window from "./Window.svelte";
-    import { Handle, Pane, PaneGroup } from "$lib/components/ui/resizable/index.js";
+    import { Handle, Pane, PaneGroup } from "$lib/components/ui/resizable";
     const resizeEvent = new Event("_resize")
     function resize(){
       window.dispatchEvent(resizeEvent) 

@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+.bg-border{
+  background-color: black;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;
