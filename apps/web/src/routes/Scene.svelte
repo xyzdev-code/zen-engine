@@ -2,7 +2,7 @@
   import { Controller, initializeScene, type GameObject } from "@repo/zen";
   import { onMount } from "svelte";
   onMount(()=>{
-    initializeScene(undefined,undefined,document.getElementById("mainCanvas") as HTMLElement)
+    initializeScene(undefined,undefined,document.getElementById("mainCanvas") as HTMLElement, "_resize")
   }) 
 </script>
 <div id="mainCanvas" class="h-full w-full"></div>

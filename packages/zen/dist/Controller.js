@@ -55,13 +55,14 @@ export function Destroy(target) {
 }
 globalThis.Controllers = [];
 export const defaultCamera = new three.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-export function initializeScene(camera = defaultCamera, renderer = new three.WebGLRenderer, el = document.body) {
+export function initializeScene(camera = defaultCamera, renderer = new three.WebGLRenderer, el = document.body, event = "resize") {
     renderer.setSize(el.offsetWidth, el.offsetHeight);
     function resize() {
         camera.aspect = el.offsetWidth / el.offsetHeight;
         camera.updateProjectionMatrix();
-        renderer.setSize(el.offsetWidth, el.offsetWidth);
+        renderer.setSize(el.offsetWidth, el.offsetHeight);
     }
+    window.addEventListener(event, resize, false);
     window.addEventListener("resize", resize, false);
     el.appendChild(renderer.domElement);
     function tick() {

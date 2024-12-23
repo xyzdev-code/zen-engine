@@ -32,5 +32,5 @@ declare global {
     var Controllers: Array<Controller>;
 }
 export declare const defaultCamera: three.PerspectiveCamera;
-export declare function initializeScene(camera?: three.PerspectiveCamera, renderer?: three.WebGLRenderer, el?: HTMLElement): void;
+export declare function initializeScene(camera?: three.PerspectiveCamera, renderer?: three.WebGLRenderer, el?: HTMLElement, event?: string): void;
 //# sourceMappingURL=Controller.d.ts.map

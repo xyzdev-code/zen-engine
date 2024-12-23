@@ -66,14 +66,15 @@ declare global{
 }
 globalThis.Controllers = []
 export const defaultCamera = new three.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000)
-export function initializeScene(camera: three.PerspectiveCamera = defaultCamera,renderer: three.WebGLRenderer = new three.WebGLRenderer, el: HTMLElement = document.body){ 
+export function initializeScene(camera: three.PerspectiveCamera = defaultCamera,renderer: three.WebGLRenderer = new three.WebGLRenderer, el: HTMLElement = document.body, event: string = "resize"){ 
   renderer.setSize(el.offsetWidth, el.offsetHeight)
   function resize(){
     camera.aspect = el.offsetWidth / el.offsetHeight;
     camera.updateProjectionMatrix();
     
-    renderer.setSize(el.offsetWidth, el.offsetWidth);
+    renderer.setSize(el.offsetWidth, el.offsetHeight);
   }
+  window.addEventListener(event, resize, false)
   window.addEventListener("resize", resize, false)
   el.appendChild(renderer.domElement)
   function tick(){
