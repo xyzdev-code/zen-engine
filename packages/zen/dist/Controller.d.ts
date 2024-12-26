@@ -14,7 +14,7 @@ export declare class Controller {
     _temp: Controller;
     _updateIndex: number;
     readonly isController = true;
-    constructor(gameObject: GameObject);
+    private constructor();
     Init(): void;
     Update(): void;
     _reset(): void;

@@ -13,7 +13,7 @@
     }
   }
 </script>
-<div class="w-full h-full bg-primary">
+<div class="w-full h-full">
   {#if permission}
     <FileTreeNode _handles={Directories}/>
   {:else}

@@ -15,7 +15,7 @@ export class Controller{
   _temp!: Controller;
   _updateIndex: number;
   readonly isController = true;
-  constructor(gameObject: GameObject){
+  private constructor(gameObject: GameObject){
     assertType<GameObject>("Is GameObject", gameObject, ()=>Object.hasOwn(gameObject, "isObject3D"))
     this.gameObject = gameObject
     this._updateIndex = Controller._updateIndex 
