@@ -8,7 +8,9 @@ export type Vec2 = InstanceType<typeof vec2>;
 export declare const scene: three.Scene;
 export declare class Controller {
     gameObject: GameObject;
-    tag: string;
+    _tag: string;
+    get tag(): string;
+    set tag(newName: string);
     _memoryLocation: number;
     static _updateIndex: number;
     _temp: Controller;

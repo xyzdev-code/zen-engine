@@ -9,7 +9,14 @@ export type Vec2 = InstanceType<typeof vec2>
 export const scene = new three.Scene
 export class Controller{
   gameObject: GameObject;
-  tag: string = "";
+  _tag: string = ""
+  get tag(){
+    return this._tag
+  }
+  set tag(newName: string){
+    this._tag = newName
+    this.gameObject.name = newName
+  }
   _memoryLocation!: number;
   static _updateIndex = 0;
   _temp!: Controller;
@@ -22,6 +29,7 @@ export class Controller{
     Controller._updateIndex++
     scene.add(gameObject)
     this.Init()
+    this._tag = this.gameObject.name
     Controllers.push(this) 
   }
   Init(): void{

@@ -5,8 +5,15 @@ export const vec3 = three.Vector3;
 export const vec2 = three.Vector2;
 export const scene = new three.Scene;
 export class Controller {
+    get tag() {
+        return this._tag;
+    }
+    set tag(newName) {
+        this._tag = newName;
+        this.gameObject.name = newName;
+    }
     constructor(gameObject) {
-        this.tag = "";
+        this._tag = "";
         this.isController = true;
         assertType("Is GameObject", gameObject, () => Object.hasOwn(gameObject, "isObject3D"));
         this.gameObject = gameObject;
@@ -14,6 +21,7 @@ export class Controller {
         Controller._updateIndex++;
         scene.add(gameObject);
         this.Init();
+        this._tag = this.gameObject.name;
         Controllers.push(this);
     }
     Init() {
